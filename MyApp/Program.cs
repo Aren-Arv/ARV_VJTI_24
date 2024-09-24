@@ -13,18 +13,17 @@ class Program
         }
         else
         {
-            long factorial = FactorialIterative(number);
+            long factorial = FactorialRecursive(number);
             Console.WriteLine($"The factorial of {number} is {factorial}.");
         }
     }
 
-    static long FactorialIterative(int n)
+    static long FactorialRecursive(int n)
     {
-        long result = 1;
-        for (int i = 2; i <= n; i++)
+        if (n == 0 || n == 1)
         {
-            result *= i;
+            return 1;
         }
-        return result;
+        return n * FactorialRecursive(n - 1);
     }
 }
